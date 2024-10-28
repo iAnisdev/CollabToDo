@@ -2,6 +2,7 @@ import mysql.connector
 from flask import Flask , g
 from .config import Config
 from .routes.index import bp as index_bp
+from .routes.auth import bp as auth_bp
 
 def create_app():
     app = Flask(__name__)
@@ -27,5 +28,6 @@ def create_app():
             db.close()
     
     app.register_blueprint(index_bp)
+    app.register_blueprint(auth_bp)
 
     return app

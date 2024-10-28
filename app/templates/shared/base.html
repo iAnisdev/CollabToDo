@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="h-full bg-white" lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %} - CollabToDo</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
 </head>
 
-<body>
-    <section class="content">
+<body class="h-full">
+    <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
         <header>
             {% block header %}{% endblock %}
         </header>
@@ -17,7 +17,8 @@
         <div class="flash">{{ message }}</div>
         {% endfor %}
         {% block content %}{% endblock %}
-    </section>
-</body>
+    </div>
 
+    <script src="https://cdn.tailwindcss.com"></script>
+</body>
 </html>
