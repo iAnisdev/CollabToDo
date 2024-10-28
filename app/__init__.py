@@ -1,6 +1,7 @@
 import mysql.connector
 from flask import Flask , g
 from .config import Config
+from .routes.index import bp as index_bp
 
 def create_app():
     app = Flask(__name__)
@@ -24,9 +25,7 @@ def create_app():
         db = getattr(g, 'db', None)
         if db is not None:
             db.close()
-
-    @app.route('/')
-    def index():
-        return 'Hello, World!'
+    
+    app.register_blueprint(index_bp)
 
     return app
