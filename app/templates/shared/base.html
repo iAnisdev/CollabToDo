@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %} - CollabToDo</title>
     <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="h-full">
@@ -18,7 +19,5 @@
         {% endfor %}
         {% block content %}{% endblock %}
     </div>
-
-    <script src="https://cdn.tailwindcss.com"></script>
 </body>
 </html>
